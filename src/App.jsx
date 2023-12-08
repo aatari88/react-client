@@ -1,9 +1,16 @@
+import { BrowserRouter } from "react-router-dom"
+import Router from "./routes"
+import { HelmetProvider } from "react-helmet-async"
 
 function App() {
 
   return (
     <>
-      <h1>hi</h1>
+      <HelmetProvider>
+        <BrowserRouter>
+          <Router />
+        </BrowserRouter>
+      </HelmetProvider>
     </>
   )
 }
