@@ -11,7 +11,6 @@ import getRatio from './getRatio';
 // eslint-disable-next-line react/display-name
 const Image = forwardRef(
   ({ ratio, disabledEffect = false, effect = 'blur', sx, ...other }, ref) => {
-    console.log(ratio, disabledEffect, effect, sx, other);
     const content = (
       <Box
         component={LazyLoadImage}

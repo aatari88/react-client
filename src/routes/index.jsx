@@ -1,8 +1,9 @@
-import { Navigate, Outlet, useRoutes } from "react-router-dom";
+import { Navigate, useRoutes } from "react-router-dom";
 
 // config
 import { PATH_AFTER_LOGIN } from '../config-global';
 import { LoginPage } from "./elements";
+import MainLayout from "../layouts/main";
 
 export default function Router() {
   return useRoutes([
@@ -24,8 +25,7 @@ export default function Router() {
       path: '/app',
       element: (
         <>
-          <h1>App</h1>
-          <Outlet />
+          <MainLayout />
         </>
         // <AuthGuard>
           // <DashboardLayout />
