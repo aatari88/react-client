@@ -60,6 +60,12 @@ export default function Router() {
           //   { path: 'one', element: <PageOne /> },
           //   { path: 'two', element: <PageTwo /> },
 
+        },
+        {
+          path: 'three',
+          element: (
+            <h1>Three</h1>
+          ),
         }
       ]
     }

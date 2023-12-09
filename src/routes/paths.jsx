@@ -16,7 +16,7 @@ export const PATH_APP = {
   root: ROOTS_APP,
   dashboard: path(ROOTS_APP, '/dashboard'),
   two: path(ROOTS_APP, '/two'),
-  // three: path(ROOTS_APP, '/three'),
+  three: path(ROOTS_APP, '/three'),
   // user: {
   //   root: path(ROOTS_APP, '/user'),
   //   four: path(ROOTS_APP, '/user/four'),
