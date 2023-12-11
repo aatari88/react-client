@@ -3,13 +3,17 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { Box, Drawer, Stack } from '@mui/material';
+
+import useResponsive from '../../../hooks/useResponsive';
 // config
 import { NAV } from '../../../config-global';
-import useResponsive from '../../../hooks/useResponsive';
+// components
 import Logo from '../../../components/logo';
 import Scrollbar from '../../../components/scrollbar';
 import { NavSectionVertical } from '../../../components/nav-section';
+
 import navConfig from './config-navigation';
+import NavToggleButton from './NavToggleButton';
 
 // ----------------------------------------------------------------------
 
@@ -68,6 +72,7 @@ export default function NavVertical({ openNav, onCloseNav }) {
         width: { lg: NAV.W_DASHBOARD },
       }}
     >
+      <NavToggleButton />
 
       {isDesktop ? (
         <Drawer
@@ -97,7 +102,7 @@ export default function NavVertical({ openNav, onCloseNav }) {
             },
           }}
         >
-          {/* {renderContent} */}
+          {renderContent}
         </Drawer>
       )}
 

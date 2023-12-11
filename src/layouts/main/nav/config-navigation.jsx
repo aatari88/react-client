@@ -22,7 +22,7 @@ const navConfig = [
   {
     subheader: 'general v4.2.0',
     items: [
-      { title: 'Dashboard', path: PATH_APP.dashboard, icon: ICONS.dashboard, roles: ['admin'] },
+      { title: 'Dashboard', path: PATH_APP.dashboard, icon: ICONS.dashboard },
       { title: 'Two', path: PATH_APP.two, icon: ICONS.ecommerce },
       { title: 'Three', path: PATH_APP.three, icon: ICONS.analytics },
     ],

@@ -10,7 +10,6 @@ import useResponsive from "../../../hooks/useResponsive";
 // config
 import { HEADER, NAV } from '../../../config-global';
 // components
-import Logo from '../../../components/logo';
 import Iconify from '../../../components/iconify';
 //
 import AccountPopover from './AccountPopover';
@@ -30,7 +29,6 @@ export default function Header({ onOpenNav }) {
 
   const renderContent = (
     <>
-      {isDesktop && <Logo sx={{ mr: 2.5 }} />}
       {!isDesktop && (
         <IconButton onClick={onOpenNav} sx={{ mr: 1, color: 'text.primary' }}>
           <Iconify icon="eva:menu-2-fill" />

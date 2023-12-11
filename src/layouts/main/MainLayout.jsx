@@ -16,7 +16,11 @@ export default function MainLayout() {
     setOpen(true);
   };
 
-  const renderNavVertical = <NavVertical />;
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const renderNavVertical = <NavVertical openNav={open} onCloseNav={handleClose} />;
 
   return (
     <>
