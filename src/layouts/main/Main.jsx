@@ -16,6 +16,8 @@ Main.propTypes = {
 };
 
 export default function Main({ children, sx, ...other }) {
+  // const isNavMini = themeLayout === 'mini';
+  const isNavMini = true;
   const isDesktop = useResponsive('up', 'lg');
   return (
     <Box
@@ -26,9 +28,9 @@ export default function Main({ children, sx, ...other }) {
           px: 2,
           py: `${HEADER.H_DASHBOARD_DESKTOP + SPACING}px`,
           width: `calc(100% - ${NAV.W_DASHBOARD}px)`,
-          // ...(isNavMini && {
-          //   width: `calc(100% - ${NAV.W_DASHBOARD_MINI}px)`,
-          // }),
+          ...(isNavMini && {
+            width: `calc(100% - ${NAV.W_DASHBOARD_MINI}px)`,
+          }),
         }),
         ...sx,
       }}

@@ -23,6 +23,10 @@ Header.propTypes = {
 export default function Header({ onOpenNav }) {
   const theme = useTheme();
 
+  // const isNavMini = themeLayout === 'mini';
+
+  const isNavMini = true;
+
   const isDesktop = useResponsive('up', 'lg');
 
   const isOffset = useOffSetTop(HEADER.H_DASHBOARD_DESKTOP);
@@ -70,9 +74,9 @@ export default function Header({ onOpenNav }) {
         //   height: HEADER.H_DASHBOARD_DESKTOP_OFFSET,
         //   borderBottom: `dashed 1px ${theme.palette.divider}`,
         // }),
-        // ...(isNavMini && {
-        //   width: `calc(100% - ${NAV.W_DASHBOARD_MINI + 1}px)`,
-        // }),
+        ...(isNavMini && {
+          width: `calc(100% - ${NAV.W_DASHBOARD_MINI + 1}px)`,
+        }),
       }),
     }}
     >
