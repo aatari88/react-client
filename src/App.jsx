@@ -2,6 +2,7 @@ import { BrowserRouter } from "react-router-dom"
 import Router from "./routes"
 import { HelmetProvider } from "react-helmet-async"
 import { SettingsProvider } from "./components/settings"
+import ThemeProvider from "./theme"
 
 function App() {
 
@@ -10,7 +11,9 @@ function App() {
       <HelmetProvider>
         <SettingsProvider>
           <BrowserRouter>
-            <Router />
+            <ThemeProvider>
+              <Router />
+            </ThemeProvider>
           </BrowserRouter>
         </SettingsProvider>
       </HelmetProvider>

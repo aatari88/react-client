@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { createContext, useCallback, useContext, useMemo, useState } from "react";
 
 import { defaultSettings } from './config-setting';
-import { defaultPreset } from "./presets";
+import { defaultPreset, getPresets, presetsOption } from "./presets";
 
 // ----------------------------------------------------------------------
 
@@ -52,6 +52,20 @@ SettingsProvider.propTypes = {
 export function SettingsProvider({ children }) {
   const [settings, setSettings] = useState(defaultSettings);
 
+  // Mode
+  const onToggleMode = useCallback(() => {
+    const themeMode = settings.themeMode === 'light' ? 'dark' : 'light';
+    setSettings({ ...settings, themeMode });
+  }, [setSettings, settings]);
+
+  // const onChangeMode = useCallback(
+  //   (event) => {
+  //     const themeMode = event.target.value;
+  //     setSettings({ ...settings, themeMode });
+  //   },
+  //   [setSettings, settings]
+  // );
+
   // Layout
   const onToggleLayout = useCallback(() => {
     const themeLayout = settings.themeLayout === 'vertical' ? 'mini' : 'vertical';
@@ -69,12 +83,22 @@ export function SettingsProvider({ children }) {
   const memoizedValue = useMemo(
     () => ({
       ...settings,
+      // Mode
+      onToggleMode,
+      // onChangeMode,
       // Layout
       onToggleLayout,
       // onChangeLayout,
+      // Color
+      // onChangeColorPresets,
+      presetsOption,
+      presetsColor: getPresets(settings.themeColorPresets),
     }),
     [
       settings,
+      // Mode
+      onToggleMode,
+      // onChangeMode,
       onToggleLayout,
       // onChangeLayout
     ]
