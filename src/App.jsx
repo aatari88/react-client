@@ -3,6 +3,7 @@ import Router from "./routes"
 import { HelmetProvider } from "react-helmet-async"
 import { SettingsProvider } from "./components/settings"
 import ThemeProvider from "./theme"
+import ThemeSettings from "./components/settings/ThemeSettings"
 
 function App() {
 
@@ -12,7 +13,9 @@ function App() {
         <SettingsProvider>
           <BrowserRouter>
             <ThemeProvider>
-              <Router />
+              <ThemeSettings>
+                <Router />
+              </ThemeSettings>
             </ThemeProvider>
           </BrowserRouter>
         </SettingsProvider>
