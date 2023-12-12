@@ -10,7 +10,7 @@ import { bgBlur } from '../../../utils/cssStyles';
 import { NAV } from '../../../config-global';
 // components
 import Iconify from '../../../components/iconify';
-// import { useSettingsContext } from '../../../components/settings';
+import { useSettingsContext } from '../../../components/settings';
 
 // ----------------------------------------------------------------------
 
@@ -21,7 +21,7 @@ NavToggleButton.propTypes = {
 export default function NavToggleButton({ sx, ...other }) {
   const theme = useTheme();
 
-  // const { themeLayout, onToggleLayout } = useSettingsContext();
+  const { themeLayout, onToggleLayout } = useSettingsContext();
 
   const isDesktop = useResponsive('up', 'lg');
 
@@ -32,7 +32,7 @@ export default function NavToggleButton({ sx, ...other }) {
   return (
     <IconButton
       size="small"
-      // onClick={onToggleLayout}
+      onClick={onToggleLayout}
       sx={{
         p: 0.5,
         top: 32,
@@ -50,8 +50,8 @@ export default function NavToggleButton({ sx, ...other }) {
     >
       <Iconify
         width={16}
-        // icon={themeLayout === 'vertical' ? 'eva:arrow-ios-back-fill' : 'eva:arrow-ios-forward-fill'}
-        icon="eva:arrow-ios-back-fill"
+        icon={themeLayout === 'vertical' ? 'eva:arrow-ios-back-fill' : 'eva:arrow-ios-forward-fill'}
+        // icon="eva:arrow-ios-back-fill"
         // icon="eva:arrow-ios-forward-fill"
       />
     </IconButton>

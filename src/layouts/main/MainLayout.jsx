@@ -9,16 +9,17 @@ import Main from "./Main";
 import Header from "./header";
 import NavMini from "./nav/NavMini";
 import NavVertical from "./nav/NavVertical";
+import { useSettingsContext } from "../../components/settings";
 
 
 export default function MainLayout() {
+  const { themeLayout } = useSettingsContext();
 
   const isDesktop = useResponsive('up', 'lg');
 
   const [open, setOpen] = useState(false);
 
-  // const isNavMini = themeLayout === 'mini';
-  const isNavMini = true;
+  const isNavMini = themeLayout === 'mini';
 
   const handleOpen = () => {
     setOpen(true);

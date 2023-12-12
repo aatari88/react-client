@@ -11,6 +11,7 @@ import useResponsive from "../../../hooks/useResponsive";
 import { HEADER, NAV } from '../../../config-global';
 // components
 import Iconify from '../../../components/iconify';
+import { useSettingsContext } from '../../../components/settings';
 //
 import AccountPopover from './AccountPopover';
 
@@ -23,9 +24,9 @@ Header.propTypes = {
 export default function Header({ onOpenNav }) {
   const theme = useTheme();
 
-  // const isNavMini = themeLayout === 'mini';
+  const { themeLayout } = useSettingsContext();
 
-  const isNavMini = true;
+  const isNavMini = themeLayout === 'mini';
 
   const isDesktop = useResponsive('up', 'lg');
 

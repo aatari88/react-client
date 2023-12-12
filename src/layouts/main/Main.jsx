@@ -5,6 +5,7 @@ import { Box } from "@mui/material";
 import useResponsive from '../../hooks/useResponsive';
 
 import { HEADER, NAV } from '../../config-global';
+import { useSettingsContext } from '../../components/settings';
 
 // ----------------------------------------------------------------------
 
@@ -16,8 +17,10 @@ Main.propTypes = {
 };
 
 export default function Main({ children, sx, ...other }) {
-  // const isNavMini = themeLayout === 'mini';
-  const isNavMini = true;
+  const { themeLayout } = useSettingsContext();
+
+  const isNavMini = themeLayout === 'mini';
+
   const isDesktop = useResponsive('up', 'lg');
   return (
     <Box
